@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   bank-app:
-    image: springboot-bank
+    image: springapp
     container_name: bank-app
     depends_on:
       - mysql
