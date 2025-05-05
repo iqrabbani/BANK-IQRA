@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="~{layout :: head}">
+</head>
+<body class="main-body">
+<header th:replace="~{layout :: header}">
+</header>
+<main>
+  <div class="grid-container prospect-index">
+    <form method="get" class="filter">
+      <input name="nomorKtp" type="text">
+      <button class="blue-button filter-button">
+        Search By KTP
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </button>
+    </form>
+    <a class="blue-button create-button">
+      Daftar Baru
+      <i class="fas fa-plus" aria-hidden="true"></i>
+    </a>
+    <table class="index-table">
+      <thead>
+      <th>Nomor Rekening</th>
+      <th>Nama Lengkap</th>
+      <th>Nomor KTP</th>
+      <th>Tanggal Daftar</th>
+      </thead>
+      <tbody>
+      <tr th:each="nasabah:${grid}" th:object="${nasabah}">
+        <td th:text="*{nomorRekening}"></td>
+        <td th:text="*{namaLengkap}"></td>
+        <td th:text="*{nomorKtp}"></td>
+        <td th:text="*{tanggalDaftar}"></td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+        <td colspan="4">
+        </td>
+      </tr>
+      </tfoot>
+    </table>
+  </div>
+</main>
+<footer th:replace="~{layout :: footer}">
+</footer>
+<div class="popup-form">
+  <div class="popup-form-content upsert-form">
+  </div>
+</div>
+<script th:src="@{/js/nasabah.js}"></script>
+</body>
+</html>

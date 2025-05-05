@@ -1,0 +1,387 @@
+/* Reset beberapa elemen default */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body dan Font */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #0066cc;
+}
+
+/* Header dan Navbar */
+header {
+    background-color: #004C99;
+    color: white;
+    padding: 10px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar .logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+}
+
+.navbar-menu li {
+    margin-left: 20px;
+}
+
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+    color: #CCCC00; /* Warna saat hover */
+}
+
+/* Navbar toggle untuk mobile */
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.navbar-toggle span {
+    background-color: white;
+    width: 25px;
+    height: 3px;
+    margin: 4px 0;
+}
+
+/* Bagian konten */
+main {
+    padding: 20px;
+    min-height: 490px;
+}
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+section h1, section h2 {
+    margin-bottom: 10px;
+    color: #004C99;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #004C99;
+    color: white;
+    width: 100%;
+    bottom: 0;
+}
+
+
+/* GRID CONTAINER */
+.grid-container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.filter {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.filter input[type="text"] {
+    margin-right:8px;
+    width:175px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+}
+.save-button {
+    margin-top: 15px;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0066cc;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.filter button, .create-button {
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0066cc;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter  button i, .create-button i, .save-button i{
+    padding-left: 10px;
+}
+
+.filter button:hover, .create-button:hover, .save-button:hover {
+    background-color: #004C99;
+}
+
+.update-button, .detail-button, .delete-button, .customer-button, .order-button,.policy-button {
+    padding: 10px 10px;
+    margin: 5px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: #0066cc;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.customer-column{
+    min-width: 130px;
+}
+
+.price-column div{
+    margin-bottom: 5px;
+    border-bottom: 2px #0066cc solid
+}
+
+.check-button {
+    padding: 10px 10px;
+    margin: 5px;
+    outline: none;
+    border: 1px 0066cc solid;
+    border-radius: 5px;
+    background-color: white;
+    color: #0066cc;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.update-button:hover, .detail-button:hover,
+.delete-button:hover, .customer-button:hover,
+.order-button:hover, .policy-button:hover {
+    background-color: #004C99;
+}
+
+.close-button,.refresh-button {
+    position: absolute;
+    top: 17px; /* Atur jarak dari atas */
+    right: 20px; /* Atur jarak dari kanan */
+    background-color: transparent;
+    border: none;
+    color: #004C99;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.close-button:hover, refresh-button:hover {
+    color: #0066cc; /* Warna saat tombol close dihover */
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.index-table{
+    margin-top: 20px;
+}
+
+table thead {
+    background-color: #0066cc;
+    color: white;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+    background-color: #f1f5ff;
+}
+
+table thead tr:hover {
+    background-color: #004C99;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #0066cc;
+}
+
+.pagination .number {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #e9ecef;
+    color: #0066cc;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination .number:hover {
+    background-color: #004C99;
+    color: white;
+}
+
+.popup-form {
+    display: none;
+    position: fixed;
+    justify-items: center;
+    align-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Translucent background */
+    z-index: 9999; /* Ensure it appears on top of other elements */
+    overflow: auto; /* Enable scrolling if needed */
+}
+
+.popup-form-content {
+    background-color: #ffffff;
+    margin: 15px;
+    padding: 20px;
+    border: 2px solid #004C99;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    position: relative; /* Memberi posisi relatif untuk mengontrol posisi tombol close */
+}
+
+.save-form{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.action {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.product-policy {
+    margin-top: 20px; /* Sesuaikan margin atas */
+    background-color: #0066cc; /* Warna latar belakang biru */
+    color: white; /* Warna teks agar kontras */
+    padding: 10px; /* Beri sedikit ruang dalam */
+    border-radius: 5px; /* Agar sudutnya tidak terlalu tajam */
+    text-align: center; /* Pusatkan teks */
+    font-weight: bold; /* Buat teks lebih tegas */
+}
+
+
+
+
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        background-color: #004C99;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-menu li {
+        margin: 10px 0;
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+
+    .index-table{
+        font-size: 12px;
+    }
+
+    .action {
+        display: flex;
+        flex-direction: column; /* Tombol ditumpuk secara vertikal */
+        align-items: center; /* Tengah-kan tombol */
+    }
+
+    .blue-button {
+        width: fit-content; /* Tombol akan memenuhi lebar <td> pada layar kecil */
+        text-align: center;
+    }
+
+}
+
+
+@media (max-width: 920px) {
+
+    .index-table{
+        font-size: 13.5px;
+    }
+
+    .action {
+        display: flex;
+        flex-direction: column; /* Tombol ditumpuk secara vertikal */
+        align-items: center; /* Tengah-kan tombol */
+    }
+
+    .update-button, .detail-button, .delete-button, .customer-button, .check-button, .order-button {
+        width: fit-content; /* Tombol akan memenuhi lebar <td> pada layar kecil */
+        text-align: center;
+        font-size: 13.5px;
+    }
+
+    .customer-column{
+        min-width: fit-content;
+    }
+
+    .customer-button span {
+        display: none;
+    }
+}
