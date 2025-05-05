@@ -1,34 +1,19 @@
-version: "3.9"
-
+version: "3"
 services:
-  bank-app:
-    image: springapp
-    container_name: bank-app
-    depends_on:
-      - mysql
-    ports:
-      - "8080:8080"
-    networks:
-      - bank-net
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/assesment_bank?useSSL=false&serverTimezone=UTC
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD:
-      SPRING_DATASOURCE_DRIVER-CLASS-NAME: com.mysql.cj.jdbc.Driver
-
   mysql:
-    image: mysql:latest
-    container_name: mysql-container
+    image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: my-secret_pw
-      MYSQL_DATABASE: assesment_bank
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mydb
     ports:
       - "3306:3306"
-    command: --default-authentication-plugin=mysql_native_password --bind-address=0.0.0.0
-    networks:
-      - bank-net
-
-networks:
-  bank-net:
-
-
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/mydb
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
