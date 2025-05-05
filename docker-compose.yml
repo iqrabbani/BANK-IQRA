@@ -13,14 +13,14 @@ services:
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/assesment_bank?useSSL=false&serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: my-secret_pw
+      SPRING_DATASOURCE_PASSWORD:
       SPRING_DATASOURCE_DRIVER-CLASS-NAME: com.mysql.cj.jdbc.Driver
 
   mysql:
-    image: mysql:8
-    container_name: mysql
+    image: mysql:latest
+    container_name: mysql-container
     environment:
-      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_ROOT_PASSWORD: my-secret_pw
       MYSQL_DATABASE: assesment_bank
     ports:
       - "3306:3306"
@@ -30,3 +30,5 @@ services:
 
 networks:
   bank-net:
+
+
