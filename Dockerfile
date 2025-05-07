@@ -1,7 +1,5 @@
-# Base image for Java
 FROM openjdk:17-jdk-slim
 
-# Set working directory
 WORKDIR /app
 
 # Copy built jar into container

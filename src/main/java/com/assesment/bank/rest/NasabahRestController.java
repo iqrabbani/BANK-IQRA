@@ -47,6 +47,7 @@ public class NasabahRestController{
             responseDto.setStatusCode("005");
             responseDto.setStatus(false);
             responseDto.setMessage("Internal Server Error");
+            responseDto.setData("");
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(responseDto);
         }
     }
@@ -75,12 +76,14 @@ public class NasabahRestController{
                 responseDto.setStatusCode("003");
                 responseDto.setStatus(false);
                 responseDto.setMessage("Failed Get Parameter");
+                responseDto.setData("");
                 return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(responseDto);
             }
         } catch (Exception exception) {
             responseDto.setStatusCode("005");
             responseDto.setStatus(false);
             responseDto.setMessage("Internal Server Error");
+            responseDto.setData("");
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(responseDto);
         }
     }
@@ -101,7 +104,7 @@ public class NasabahRestController{
             }else {
                 responseDto.setStatusCode("002");
                 responseDto.setStatus(false);
-                responseDto.setMessage("Form is Incomplete");
+                responseDto.setMessage("Form Request doesn't Match");
                 var bindingResultDtoList = new LinkedList<BindingResultResponseDto>();
                 {
                     for(ObjectError bind: bindingResult.getAllErrors()){
@@ -115,13 +118,15 @@ public class NasabahRestController{
                         bindingResultDtoList.add(bindingResultDto);
                     }
                 }
-                responseDto.setData(bindingResultDtoList);
+//                responseDto.setData(bindingResultDtoList);
+                responseDto.setData("");
                 return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(responseDto);
             }
         }catch (Exception ex){
             responseDto.setStatusCode("005");
             responseDto.setStatus(false);
             responseDto.setMessage("Internal Server Error");
+            responseDto.setData("");
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(responseDto);
         }
     }
@@ -148,12 +153,14 @@ public class NasabahRestController{
                 responseDto.setStatusCode("003");
                 responseDto.setStatus(false);
                 responseDto.setMessage("Failed Get Parameter");
+                responseDto.setData("");
                 return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(responseDto);
             }
         }catch (Exception ex){
             responseDto.setStatusCode("005");
             responseDto.setStatus(false);
             responseDto.setMessage("Internal Server Error");
+            responseDto.setData("");
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(responseDto);
         }
     }
@@ -174,7 +181,7 @@ public class NasabahRestController{
             }else {
                 responseDto.setStatusCode("002");
                 responseDto.setStatus(false);
-                responseDto.setMessage("Form is Incomplete");
+                responseDto.setMessage("Form Request doesn't Match");
                 var bindingResultDtoList = new LinkedList<BindingResultResponseDto>();
                 {
                     for(ObjectError bind: bindingResult.getAllErrors()){
@@ -188,13 +195,15 @@ public class NasabahRestController{
                         bindingResultDtoList.add(bindingResultDto);
                     }
                 }
-                responseDto.setData(bindingResultDtoList);
+//                responseDto.setData(bindingResultDtoList);
+                responseDto.setData("");
                 return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(responseDto);
             }
         }catch (Exception ex){
             responseDto.setStatusCode("005");
             responseDto.setStatus(false);
             responseDto.setMessage("Internal Server Error");
+            responseDto.setData("");
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(responseDto);
         }
     }
@@ -223,12 +232,14 @@ public class NasabahRestController{
                 responseDto.setStatusCode("003");
                 responseDto.setStatus(false);
                 responseDto.setMessage("Failed Get Parameter");
+                responseDto.setData("");
                 return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(responseDto);
             }
         } catch (Exception exception){
             responseDto.setStatusCode("005");
             responseDto.setStatus(false);
             responseDto.setMessage("Internal Server Error");
+            responseDto.setData("");
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(responseDto);
         }
     }
