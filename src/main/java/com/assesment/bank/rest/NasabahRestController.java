@@ -1,6 +1,5 @@
 package com.assesment.bank.rest;
 
-import com.assesment.bank.dto.nasabah.NasabahDetailDto;
 import com.assesment.bank.dto.nasabah.NasabahNewDto;
 import com.assesment.bank.dto.nasabah.NasabahUpdateDto;
 import com.assesment.bank.dto.response.ResponseDto;
@@ -42,7 +41,7 @@ public class NasabahRestController{
         } catch (Exception exception){
             responseDto.setStatusCode("005");
             responseDto.setStatus(false);
-            responseDto.setMessage("Failed Get Data");
+            responseDto.setMessage("Internal Server Error");
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(responseDto);
         }
     }
@@ -76,7 +75,7 @@ public class NasabahRestController{
         } catch (Exception exception) {
             responseDto.setStatusCode("005");
             responseDto.setStatus(false);
-            responseDto.setMessage("Failed Get Data");
+            responseDto.setMessage("Internal Server Error");
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(responseDto);
         }
     }
@@ -104,7 +103,7 @@ public class NasabahRestController{
         }catch (Exception ex){
             responseDto.setStatusCode("005");
             responseDto.setStatus(false);
-            responseDto.setMessage("Failed Get Data");
+            responseDto.setMessage("Internal Server Error");
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(responseDto);
         }
     }
@@ -136,7 +135,7 @@ public class NasabahRestController{
         }catch (Exception ex){
             responseDto.setStatusCode("005");
             responseDto.setStatus(false);
-            responseDto.setMessage("Failed Get Data");
+            responseDto.setMessage("Internal Server Error");
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(responseDto);
         }
     }
@@ -164,7 +163,7 @@ public class NasabahRestController{
         }catch (Exception ex){
             responseDto.setStatusCode("005");
             responseDto.setStatus(false);
-            responseDto.setMessage("Failed Get Data");
+            responseDto.setMessage("Internal Server Error");
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(responseDto);
         }
     }
@@ -198,7 +197,7 @@ public class NasabahRestController{
         } catch (Exception exception){
             responseDto.setStatusCode("005");
             responseDto.setStatus(false);
-            responseDto.setMessage("Failed Get Data");
+            responseDto.setMessage("Internal Server Error");
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(responseDto);
         }
     }
