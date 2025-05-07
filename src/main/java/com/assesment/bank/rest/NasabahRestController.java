@@ -2,6 +2,7 @@ package com.assesment.bank.rest;
 
 import com.assesment.bank.dto.nasabah.NasabahNewDto;
 import com.assesment.bank.dto.nasabah.NasabahUpdateDto;
+import com.assesment.bank.dto.response.BindingResultResponseDto;
 import com.assesment.bank.dto.response.ResponseDto;
 import com.assesment.bank.service.NasabahService;
 import jakarta.validation.Valid;
@@ -9,7 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.LinkedList;
 
 @RestController
 @RequestMapping("/nasabah-api")
@@ -97,7 +102,20 @@ public class NasabahRestController{
                 responseDto.setStatusCode("002");
                 responseDto.setStatus(false);
                 responseDto.setMessage("Form is Incomplete");
-                responseDto.setData(bindingResult.getAllErrors());
+                var bindingResultDtoList = new LinkedList<BindingResultResponseDto>();
+                {
+                    for(ObjectError bind: bindingResult.getAllErrors()){
+                        var bindingResultDto = new BindingResultResponseDto();
+                        bindingResultDto.setObjectName(bind.getObjectName());
+                        if (bind instanceof FieldError fieldError){
+                            bindingResultDto.setField(fieldError.getField());
+                            bindingResultDto.setRejectedValue(fieldError.getRejectedValue().toString());
+                        }
+                        bindingResultDto.setErrorMessage(bind.getDefaultMessage());
+                        bindingResultDtoList.add(bindingResultDto);
+                    }
+                }
+                responseDto.setData(bindingResultDtoList);
                 return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(responseDto);
             }
         }catch (Exception ex){
@@ -157,7 +175,20 @@ public class NasabahRestController{
                 responseDto.setStatusCode("002");
                 responseDto.setStatus(false);
                 responseDto.setMessage("Form is Incomplete");
-                responseDto.setData(bindingResult.getAllErrors());
+                var bindingResultDtoList = new LinkedList<BindingResultResponseDto>();
+                {
+                    for(ObjectError bind: bindingResult.getAllErrors()){
+                        var bindingResultDto = new BindingResultResponseDto();
+                        bindingResultDto.setObjectName(bind.getObjectName());
+                        if (bind instanceof FieldError fieldError){
+                            bindingResultDto.setField(fieldError.getField());
+                            bindingResultDto.setRejectedValue(fieldError.getRejectedValue().toString());
+                        }
+                        bindingResultDto.setErrorMessage(bind.getDefaultMessage());
+                        bindingResultDtoList.add(bindingResultDto);
+                    }
+                }
+                responseDto.setData(bindingResultDtoList);
                 return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(responseDto);
             }
         }catch (Exception ex){

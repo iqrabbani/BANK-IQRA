@@ -21,7 +21,8 @@
         request.send();
         request.onload = () => {
             if(request.status == 200){
-                let data = JSON.parse(request.response);
+                let response = JSON.parse(request.response);
+                let data = response.data;
 
                 popup.style.display = 'block';
 
@@ -96,7 +97,8 @@
                 request.send();
                 request.onload = () => {
                     if(request.status == 200){
-                        let data = JSON.parse(request.response);
+                        let response = JSON.parse(request.response);
+                        let data = response.data;
 
                         let nomorRekening = data.nomorRekening;
                         let nomorKtp = data.nomorKtp;
@@ -189,7 +191,8 @@
                 request.send();
                 request.onload = () => {
                     if (request.status == 200){
-                        let data = JSON.parse(request.response);
+                        let response = JSON.parse(request.response);
+                        let data = response.data;
 
                         let namaLengkap = data.namaLengkap;
                         let nomorKtp = data.nomorKtp;
