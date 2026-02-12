@@ -1,5 +1,4 @@
-public
-package com.trollmarket.controller;
+package com.assesment.bank.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,6 +22,4 @@ public class TestController {
         stmt.executeQuery("SELECT * FROM users WHERE id=" + id);
         return "OK";
     }
-}TestController{
-
 }
